@@ -17,4 +17,13 @@ public class ProductRepository {
         }
         return Optional.empty();
     }
+
+    public static Optional<Product> findByName(String name) {
+        for (Product product : PRODUCTS) {
+            if (product.getName().equals(name)) {
+                return Optional.of(product);
+            }
+        }
+        return Optional.empty();
+    }
 }
